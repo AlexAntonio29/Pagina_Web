@@ -13,8 +13,8 @@
             align-items: center;
             display: flex;
             flex-direction: column;
-            background: #1b267a;
-            color: rgb(248, 238, 238);
+            background: #0c1c42;
+            color: rgb(255, 255, 255);
         }
 
         .card{
@@ -25,6 +25,7 @@
             margin: 0 auto;
             max-width: 600px;
             min-width: 300px;
+            box-shadow:0 14px 15px rgba(0,0,0,0.45);
         }
         .salida{
             border-radius: 1rem;
@@ -93,11 +94,26 @@
             border-radius: 1rem;
             background: #cacde2;
             padding: 1rem;
+            transition: all 200ms;
+            color: #1b267a;
+            box-shadow:0 4px 5px rgba(0,0,0,0.45);
         }
 
         button:hover{
-            background: #9da6dc;
+            background: #ffffff;
+            border: 1px solid #00ccff
+            
         }
+
+        .btn-special{
+            background: #56e831;
+        }
+
+        .btn-special:hover{
+            background: #25b002;
+        }
+
+        
 
 
 
@@ -126,7 +142,7 @@
 
         <div class="teclas">
             <section>
-                <button id="bc">C</button>
+                <button class="btn-special" id="bc">C</button>
                 <button id="bDiv">/</button>
                 <button id="bDel">Delete</button>
             </section>
@@ -151,7 +167,7 @@
             <section>
                 <button id="b0">0</button>
                 <button id="bPoint">.</button>
-                <button id="bIgual">=</button>
+                <button class="btn-special" id="bIgual">=</button>
             </section>
         </div>
 
@@ -351,6 +367,17 @@
         for(let i=0;i<gOut.value.length-1;i++)
             beforeText+=gOut.value.charAt(i);
 
+
+
+            if(gOut.value==="") {
+                gSignal.textContent=""; 
+                gOut.value=gOperando.value;
+                gOperando.value="";
+            
+
+
+            }
+            else
             gOut.value=beforeText;
     })
 
