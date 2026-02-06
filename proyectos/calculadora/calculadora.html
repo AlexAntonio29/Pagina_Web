@@ -244,8 +244,10 @@
                 break
 
             case "/":
-                    if(operador!=="0")
-                        Number(operador) / Number(operando);
+                    if(operador!=="0"){
+                        //console.log(Number(operador)/Number(operando));
+
+                      return  Number(operador) / Number(operando);}
                     else {
                         alert("No se puede dividir entre 0");
                         return Number(operando);
